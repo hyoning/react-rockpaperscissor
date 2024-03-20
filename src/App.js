@@ -21,6 +21,8 @@ function App() {
   const [computerSelect, setComputerSelect] = useState(choice.scissors)
   const [result, setResult] = useState("")
   const [computerResult, setComputerResult] = useState("")
+  const [userScore, setUserScore] = useState(0)
+  const [computerScore, setComputerScore] = useState(0)
 
   const play = (userChoice) =>{
     setUserSelect(choice[userChoice])
@@ -30,6 +32,7 @@ function App() {
     setResult(user)
     let computer = user === "Tie" ? "Tie" : user === "Win" ? "Lose" : "Win"
     setComputerResult(computer)
+    inScore(user, computer)
   } 
   const judgement = (user, computer) => {
     if(user.name === computer.name){
@@ -48,16 +51,22 @@ function App() {
     let final = itemArray[randomItem]
     return choice[final]
   }
-  useEffect(() => {
-    console.log("useEffect Fire")
-  },[])
-  useEffect(() => {
-    console.log("useEffect2 Fire", result)
-  },[result])
+
+  const inScore = (user, computer) => {
+    setUserScore(user === "Win" ? userScore + 1 : userScore)
+    setComputerScore(computer === "Win" ? computerScore + 1 : computerScore)
+  }
 
   return (
     <div className="wrap">
-      <div className="title">가위 바위 보 게임!<p>아래 버튼을 눌러 가위,바위,보 게임을 해봐!</p></div>
+      <div className="title">가위 바위 보 게임!
+        <div className="scoreWrap">
+          <ul>
+            <li>{userScore}</li>
+            <li>{computerScore}</li>
+          </ul>
+        </div>
+      </div>
       <div className='buttonWrap'>
         <button className="button-scissors" onClick={() => play("scissors")}>가위</button>
         <button className="button-rock" onClick={() => play("rock")}>바위</button>
