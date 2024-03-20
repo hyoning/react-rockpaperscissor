@@ -58,14 +58,30 @@ h1{
 .item-img{
     height: 100px;
 }
+@keyframes hands{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+.Win .item-img{
+    animation: hands 1s infinite;
+}
 .Win{
     background-color: #1A8400;
 }   
 .Lose{
-    background-color:#ff2441;
+    background-color:#ddd;
 }
 .Tie{
-    background-color: #ddd;
+    background-color: #222;
 }
 .buttonWrap{
     display: flex;
@@ -83,12 +99,16 @@ h1{
     border-radius: 100%;
     overflow: hidden;
 }
+.buttonWrap button:hover,
+.buttonWrap button:active{
+    border:5px solid #222;
+}
 .button-scissors{
-    background: #222 url('../public/img/scissors.png') no-repeat;
+    background: #ddd url('../public/img/scissors.png') no-repeat;
 }
 .button-rock{
-    background: #222 url('../public/img/rock.png') no-repeat;
+    background: #ddd url('../public/img/rock.png') no-repeat;
 }
 .button-paper{
-    background: #222 url('../public/img/paper.png') no-repeat;
+    background: #ddd url('../public/img/paper.png') no-repeat;
 }
