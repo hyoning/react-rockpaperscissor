@@ -61,10 +61,9 @@ function App() {
     <div className="wrap">
       <div className="title">가위 바위 보 게임!
         <div className="scoreWrap">
-          <ul>
-            <li>{userScore}</li>
-            <li>{computerScore}</li>
-          </ul>
+          <span>{userScore}</span>
+          <span>:</span>
+          <span>{computerScore}</span>
         </div>
       </div>
       <div className='buttonWrap'>

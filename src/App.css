@@ -12,23 +12,15 @@
     text-align: center;
     font-weight: 600;
 }
-.scoreWrap ul{
+.scoreWrap{
     display: flex;
     justify-content: center;
     align-items: center;
     margin:5% 0 0;
     padding:0;
 }
-.scoreWrap ul li{
-    list-style: none;
-    font-size:24px;
-}
-.scoreWrap ul li::after{
-    content: ':';
-    padding:10px;
-}
-.scoreWrap ul li:last-child:after{
-    content:'';
+.scoreWrap span{
+    margin: 0 5px;
 }
 .main{
     display: flex;
